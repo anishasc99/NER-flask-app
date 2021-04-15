@@ -1,0 +1,37 @@
+<html>
+   <head>
+
+      <title> Entity recognition for products </title>
+       <h1>Customised entity recognition </h1>
+   </head>
+   <body>
+       <form action="" method="post" novalidate>
+   {{ form.hidden_tag() }}
+   <p>
+      {{ form.email.label }}<br>
+      {{ form.email(size=32) }}
+   </p>
+  
+   <p>{{ form.submit() }}</p>
+</form>
+      
+      <hr>
+       <h2> Entities found </h2>
+       <p id = 'list'></p>
+          <script>
+        function myfunction(labels, text)
+        {
+            id1 = document.getElementById("list") 
+            for (var i=0; i <labels.length; i++)
+            {
+                id1.innerHTML = id1.innerHTML+labels[i] +" - "+ text[i] + "<br />";
+            }
+            
+        }
+              if ({{labels|tojson}}.length !=0)
+                  myfunction({{labels|tojson}}, {{text|tojson}});
+    </script>
+           
+      {% block content %}{% endblock %}
+   </body>
+</html>

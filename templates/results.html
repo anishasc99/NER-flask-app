@@ -1,0 +1,26 @@
+<html>
+    
+
+   <head>
+
+      <title> Entity recognition for products </title>
+       <h1>Entities found </h1>
+   </head>
+   <body>
+       <p id = 'list'></p>
+          <script>
+        function myfunction(labels, text)
+        {
+            id1 = document.getElementById("list") 
+            for (var i=0; i <labels.length; i++)
+            {
+                id1.innerHTML = id1.innerHTML+labels[i] +" - "+ text[i] + "<br />";
+            }
+            
+        }
+        myfunction({{labels|tojson}}, {{text|tojson}});
+    </script>
+    
+    </body>
+</html>
+       
