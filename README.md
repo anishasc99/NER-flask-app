@@ -12,4 +12,5 @@ B-PROD Epoxy
 B-PROD Boxofine
 B-PROD Ramflyn
 
-To train with custom data, use NER-training.ipynb file
+To train with custom data, use NER-training.ipynb file. To generate the emails, run email_generation.py. Annotate the emails in CoNLL format, using any annotation tool such as
+Inception.
